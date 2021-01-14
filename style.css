@@ -1,0 +1,17 @@
+.displayParty {
+  display:grid;
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 50px 50px 50px 50px;
+}
+.displayParty div {
+  border:black solid 1px;
+  text-align: center;
+}
+
+.player0 {
+  background-color: white;
+}
+
+.player1 {
+  background-color: white;
+}
