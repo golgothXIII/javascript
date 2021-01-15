@@ -9,9 +9,9 @@
 <body>
 
   <div class="displayParty">
-    <div id="player0" class="player0"></div><div></div><div id="player1" class="player1"></div>
-    <div id="globalScorePlayer0" class="player0"></div><div></div><div id="globalScorePlayer1" class="player1"></div>
-    <div id="roundScorePlayer0" class="player0"></div><div></div><div id="roundScorePlayer1" class="player1"></div>
+    <div id="name0" class="player0"></div><div></div><div id="name1" class="player1"></div>
+    <div id="globalScore0" class="player0"></div><div></div><div id="globalScore1" class="player1"></div>
+    <div id="roundScore0" class="player0"></div><div></div><div id="roundScore1" class="player1"></div>
     <div></div><div id="resultOfDice"></div><div></div>
     <div>
       <input type="button" value="roll dice" id="RollDice" onclick="partyOfDice.rollDice()">
@@ -20,7 +20,7 @@
       <input type="button" value="Hold" id="holdPlayerOne" onclick="partyOfDice.finishRound()">
     </div>
     <div>
-      <input type="button" value="New games" id="newGame">
+      <input type="button" value="New games" id="newGame" onclick="partyOfDice.newParty()">
     </div>
   </div>
   
