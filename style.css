@@ -1,17 +1,50 @@
-.displayParty {
-  display:grid;
-  grid-template-columns: 100px 50px 100px;
-  grid-template-rows: 50px 50px 50px 50px;
+body {
+  background: linear-gradient(to right, #fff 50%, #f0f4f4 50%);
+  font-family: 'Lato', sans-serif;
 }
-.displayParty div {
-  border:black solid 1px;
-  text-align: center;
+ion-col.col-dice {
+  background-color: #fff;
+  min-width: 105px;
+  max-width: 105px;
+}
+ion-col.menu{
+  font-size: 20px;
+  min-height: 50px;
+  min-width: 140px;
+}
+ion-text.player
+{
+  font-size: 35px;
+}
+ion-text.global-score
+{
+  font-size: 75px;
+}
+/* Style for current score display */
+
+ion-col.current-score{
+  background-color: #eb445a;
+  min-width: 100px;
+  height: 75px;
+}
+ion-text.current-score{
+  font-size: 35px;
 }
 
-.player0 {
-  background-color: white;
+ion-icon.player-mark
+{
+  font-size: 12px;
+  vertical-align: top;
 }
-
-.player1 {
-  background-color: white;
+ion-icon.dot-dice
+{
+  font-size: 15px;
+}
+ion-grid.dice
+{
+  width: 105px;
+}
+ion-col.cursor-hover:hover
+{
+  cursor: pointer;
 }
