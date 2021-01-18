@@ -105,7 +105,7 @@ class DisplayDice
 //-------------------------------------------------------------//
 
 
-//--- Class Party manages the game
+//--- Class Party manages the party
 class Party
 {
   constructor(playerOne, playerTwo){
