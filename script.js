@@ -2,7 +2,7 @@
 class Player
 {
   constructor(name){
-    this.name = name
+    this.name = name.toUpperCase()
     this.reset()
   }
 
@@ -118,6 +118,7 @@ class Party
     this.newParty()
   }
 
+  //manages the result of dice
   rollDice(){
     if(this.isFinish) return
     const playerNumber = this.curentPlayer
@@ -131,6 +132,7 @@ class Party
     }
   }
 
+  // End turn (if gets 1 or player keeps his score)
   finishRound(){
     if (this.isFinish) {
       return
@@ -152,6 +154,7 @@ class Party
     document.getElementById(id).innerText = value
   }
 
+  // manages player change
   nextPlayer(){
     this.curentPlayer = ( this.curentPlayer + 1 ) % 2
     this.changePlayerMark()
@@ -168,6 +171,7 @@ class Party
     }
   }
 
+  // init new party.
   newParty(){
     if (!this.isFinish) {
       this.isFinish = false
@@ -186,4 +190,5 @@ class Party
   }
 }
 
-party = new Party(new Player("Golgoth"), new Player("Actarus"))
+// creat new party with 2 new player
+party = new Party(new Player("player one"), new Player("PLAYER TWO"))

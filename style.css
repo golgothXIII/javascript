@@ -24,6 +24,10 @@ ion-row.roll-dice, ion-row.hold
 {
   min-height: 50px;
 }
+ion-icon.rotate
+{
+  transform: rotate(180deg);
+}
 
 /* User Name Display*/
 ion-text.player
