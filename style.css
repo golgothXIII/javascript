@@ -1,50 +1,83 @@
-body {
+body
+{
   background: linear-gradient(to right, #fff 50%, #f0f4f4 50%);
   font-family: 'Lato', sans-serif;
 }
-ion-col.col-dice {
-  background-color: #fff;
-  min-width: 105px;
-  max-width: 105px;
-}
-ion-col.menu{
+
+/* NEW GAMES, ROLL DICE & HOLD display*/
+ion-col.menu
+{
   font-size: 20px;
   min-height: 50px;
   min-width: 140px;
 }
+ion-col.cursor-hover:hover
+{
+  cursor: pointer;
+  font-weight: bold;
+}
+ion-row.new-game
+{
+  height: 100px;
+}
+ion-row.roll-dice, ion-row.hold
+{
+  min-height: 50px;
+}
+
+/* User Name Display*/
 ion-text.player
 {
   font-size: 35px;
 }
-ion-text.global-score
-{
-  font-size: 75px;
-}
-/* Style for current score display */
-
-ion-col.current-score{
-  background-color: #eb445a;
-  min-width: 100px;
-  height: 75px;
-}
-ion-text.current-score{
-  font-size: 35px;
-}
-
 ion-icon.player-mark
 {
   font-size: 12px;
   vertical-align: top;
 }
-ion-icon.dot-dice
+
+/* global score display */
+ion-row.global-score
 {
-  font-size: 15px;
+  height: 150px;
 }
+ion-text.global-score
+{
+  font-size: 75px;
+}
+
+/* Dice display */
 ion-grid.dice
 {
   width: 105px;
 }
-ion-col.cursor-hover:hover
+ion-row.dice
 {
-  cursor: pointer;
+  height: 35px;
+}
+ion-col.col-dice
+{
+  background-color: #fff;
+  min-width: 105px;
+  max-width: 105px;
+}
+ion-icon.dot-dice
+{
+  font-size: 15px;
+}
+
+/* current score display */
+ion-row.current-score
+{
+  height: 150px;
+}
+ion-col.current-score
+{
+  background-color: #eb445a;
+  min-width: 75px;
+  height: 75px;
+}
+ion-text.current-score
+{
+  font-size: 35px;
 }

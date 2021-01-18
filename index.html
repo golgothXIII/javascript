@@ -17,29 +17,29 @@
 </head>
 <body >
   <ion-grid fixed="true" class="ion-no-padding ion-text-center">
-    <ion-row class="ion-align-items-center" style="height: 100px">
-      <ion-col class="menu cursor-hover">
+    <ion-row class="ion-align-items-center new-game">
+      <ion-col class="menu cursor-hover" onclick="party.newParty()">
         <ion-icon name="add-circle-outline" color="danger"></ion-icon>
-        <ion-text>NEW GAMES</ion-text>
+        <ion-text>NEW GAME</ion-text>
       </ion-col>
     </ion-row>
     <ion-row class="ion-align-items-center">
       <ion-col>
-        <ion-text class="player"> PLAYER ONE</ion-text>
+        <ion-text class="player" id="name0"> PLAYER ONE</ion-text>
         <ion-icon name="ellipse" color="danger" class="player-mark" id="playerMark0"></ion-icon>
       </ion-col>
       <ion-col>
         <ion-icon name="ellipse" color="danger" class="player-mark" id="playerMark1"></ion-icon>
-        <ion-text class="player">PLAYER TWO</ion-text>
+        <ion-text class="player" id="name1">PLAYER TWO</ion-text>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-align-items-center">
+    <ion-row class="ion-align-items-start global-score">
       <ion-col>
-        <ion-text class="global-score">56</ion-text>
+        <ion-text class="global-score" id="globalScore0"></ion-text>
       </ion-col>
       <ion-col class="ion-align-items-center col-dice" size="1">
         <ion-grid class="ion-no-padding ion-text-center ion-align-self-center ion-align-items-center dice">
-          <ion-row style="height: 35px">
+          <ion-row class="dice">
             <ion-col class="ion-align-self-center">
               <ion-icon name="ellipse" color="danger" class="dot-dice" id="1.1"></ion-icon>
             </ion-col>
@@ -48,7 +48,7 @@
               <ion-icon name="ellipse" color="danger" class="dot-dice" id="1.3"></ion-icon>
             </ion-col>
           </ion-row>
-          <ion-row style="height: 35px">
+          <ion-row class="dice">
             <ion-col class="ion-align-self-center">
               <ion-icon name="ellipse" color="danger" class="dot-dice" id="2.1"></ion-icon>
             </ion-col>
@@ -59,7 +59,7 @@
               <ion-icon name="ellipse" color="danger" class="dot-dice" id="2.3"></ion-icon>
             </ion-col>
           </ion-row>
-          <ion-row style="height: 35px">
+          <ion-row class="dice">
             <ion-col class="ion-align-self-center">
               <ion-icon name="ellipse" color="danger" class="dot-dice" id="3.1"></ion-icon>
             </ion-col>
@@ -71,26 +71,26 @@
         </io-grid>
       </ion-col>
       <ion-col class=>
-        <ion-text class="global-score">56</ion-text>
+        <ion-text class="global-score" id="globalScore1"></ion-text>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-align-items-center" style="height: 150px">
+    <ion-row class="ion-align-items-center current-score">
       <ion-col></ion-col>
       <ion-col class="current-score" size="1">
         <ion-text>CURRENT</ion-text>
-        <ion-text color="light" style="font-size: 35px;">11</ion-text>
+        <ion-text color="light" class="current-score" id="roundScore0"></ion-text>
       </ion-col>
       <ion-col></ion-col> 
-      <ion-col class="ion-align-items-center" size="1" style="min-width: 140px;">
+      <ion-col class="ion-align-items-center menu" size="1">
         <ion-grid class="ion-no-padding ion-text-center ion-align-self-center ion-align-items-center">
-          <ion-row class="ion-align-items-center" style="min-height: 50px;">
-            <ion-col class="menu cursor-hover" onclick="displayDice.displayDice(rollDice())">
+          <ion-row class="ion-align-items-center roll-dice">
+            <ion-col class="menu cursor-hover" onclick="party.rollDice()">
               <ion-icon name="add-circle-outline" color="danger"></ion-icon>
               <ion-text>ROLL DICE</ion-text>      
             </ion-col>
           </ion-row>
-          <ion-row class="ion-align-items-center" style="min-height: 50px;">
-            <ion-col class="menu cursor-hover">
+          <ion-row class="ion-align-items-center hold">
+            <ion-col class="menu cursor-hover" onclick="party.finishRound()">
               <ion-icon name="add-circle-outline" color="danger"></ion-icon>
               <ion-text>HOLD</ion-text>      
             </ion-col>
@@ -100,95 +100,12 @@
       <ion-col></ion-col>
       <ion-col class="current-score" size="1">
         <ion-text>CURRENT</ion-text>
-        <ion-text color="light" class="current-score">11</ion-text>
+        <ion-text color="light" class="current-score" id="roundScore1"></ion-text>
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
   </ion-grid>
 
-<script>
-
-function resetGames() {
-  resetDice()
-  document.getElementById("playerMark0").style.display = "none"
-  document.getElementById("playerMark1").style.display = "none"
-}
-
-class DisplayDice
-{
-
-  displayDice(number) {
-    this.resetDice()
-    switch(number){
-      case 1 :
-        displayFaceOne()
-        break
-      case 2 :
-        displayFaceTwo()
-        break
-      case 3 :
-        displayFaceThree()
-        break
-      case 4 :
-        displayFaceFour()
-        break
-      case 5 :
-        displayFaceFive()
-        break
-      case 6 :
-        displayFaceSix()
-        break
-        
-    }
-  }
-
-  resetDice(){
-    document.getElementById("1.1").style.display = "none"
-    document.getElementById("1.3").style.display = "none"
-    document.getElementById("2.1").style.display = "none"
-    document.getElementById("2.2").style.display = "none"
-    document.getElementById("2.3").style.display = "none"
-    document.getElementById("3.1").style.display = "none"
-    document.getElementById("3.3").style.display = "none"
-  }
-  displayFaceOne(){
-    document.getElementById("2.2").style.display = "block"
-  }
-  displayFaceTwo(){
-    document.getElementById("1.1").style.display = "block"
-    document.getElementById("3.3").style.display = "block"
-  }
-  displayFaceBackTwo(){
-    document.getElementById("1.3").style.display = "block"
-    document.getElementById("3.1").style.display = "block"
-  }
-  displayFaceThree(){
-    displayFaceOne()
-    displayFaceTwo()
-  }
-  displayFaceFour(){
-    displayFaceTwo()
-    displayFaceBackTwo()
-  }
-  displayFaceFive(){
-    displayFaceThree()
-    displayFaceBackTwo()
-  }
-  displayFaceSix(){
-    displayFaceFour()
-    document.getElementById("2.1").style.display = "block"
-    document.getElementById("2.3").style.display = "block"
-  }
-}
-
-function rollDice(){
-  displayDice(Math.floor(Math.random() * 6 ) + 1)
-}
-
-displayDice = new DisplayDice()
-
-</script>
-
+  <script type="text/javascript" src="script.js"></script>
 </body>
-
- </html>
+</html>
